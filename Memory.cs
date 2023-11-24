@@ -2,7 +2,7 @@ using System.Runtime.InteropServices;
 
 namespace AcTrainer.Memory;
 
-public class Memory
+public class Mem
 {
     [DllImport("kernel32.dll")]
     public static extern bool ReadProcessMemory(IntPtr process, IntPtr address, byte[] buffer, int size, ref int read);
