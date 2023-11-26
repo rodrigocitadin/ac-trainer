@@ -27,6 +27,9 @@ public class Trainer
         IntPtr player = memory.readPointer(proc.Handle, mainModuleBaseAddress + playerOffset);
         IntPtr ammo = memory.readPointer(proc.Handle, player + ammoOffset);
 
-        Console.WriteLine(ammo);
+        while (true)
+        {
+            memory.writeBytes(proc.Handle, player + ammoOffset, BitConverter.GetBytes(20));
+        }
     }
 }
