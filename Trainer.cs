@@ -31,7 +31,12 @@ public class Trainer
 
     public void InfinityHealth(Process proc)
     {
-        throw new NotImplementedException();
+
+        IntPtr mainModuleBaseAddress = proc.MainModule!.BaseAddress;
+
+        IntPtr player = memory.readPointer(proc.Handle, mainModuleBaseAddress + playerOffset);
+
+        memory.writeBytes(proc.Handle, player + healthOffset, BitConverter.GetBytes(100));
     }
 
     public void InfinityArmor(Process proc)
