@@ -5,6 +5,13 @@ namespace AcTrainer.Trainer;
 
 public class Trainer
 {
+    public Trainer(Process proc)
+    {
+        this.proc = proc;
+    }
+
+    Process proc;
+
     Mem memory = new();
 
     IntPtr playerOffset = 0x17E0A8;
@@ -13,7 +20,7 @@ public class Trainer
     IntPtr granadeOffset = 0x144;
     IntPtr armorOffset = 0xF0;
 
-    public void InfinityRiffleAmmo(Process proc)
+    public void InfinityRiffleAmmo()
     {
         IntPtr mainModuleBaseAddress = proc.MainModule!.BaseAddress;
 

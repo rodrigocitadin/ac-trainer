@@ -5,7 +5,6 @@ class Program
 {
     static void main()
     {
-        Trainer trainer = new();
         Process proc;
 
         try
@@ -18,9 +17,11 @@ class Program
             return;
         }
 
+        Trainer trainer = new(proc);
+
         while (true)
         {
-            trainer.InfinityRiffleAmmo(proc);
+            trainer.InfinityRiffleAmmo();
         }
     }
 }
