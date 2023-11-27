@@ -50,6 +50,10 @@ public class Trainer
 
     public void InfinityGranade(Process proc)
     {
-        throw new NotImplementedException();
+        IntPtr mainModuleBaseAddress = proc.MainModule!.BaseAddress;
+
+        IntPtr player = memory.readPointer(proc.Handle, mainModuleBaseAddress + playerOffset);
+
+        memory.writeBytes(proc.Handle, player + granadeOffset, BitConverter.GetBytes(1));
     }
 }
