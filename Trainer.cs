@@ -29,7 +29,7 @@ public class Trainer
         memory.writeBytes(proc.Handle, player + rifleAmmoOffset, BitConverter.GetBytes(20));
     }
 
-    public void InfinityHealth(Process proc)
+    public void InfinityHealth()
     {
 
         IntPtr mainModuleBaseAddress = proc.MainModule!.BaseAddress;
@@ -39,7 +39,7 @@ public class Trainer
         memory.writeBytes(proc.Handle, player + healthOffset, BitConverter.GetBytes(100));
     }
 
-    public void InfinityArmor(Process proc)
+    public void InfinityArmor()
     {
         IntPtr mainModuleBaseAddress = proc.MainModule!.BaseAddress;
 
@@ -48,7 +48,7 @@ public class Trainer
         memory.writeBytes(proc.Handle, player + armorOffset, BitConverter.GetBytes(100));
     }
 
-    public void InfinityGranade(Process proc)
+    public void InfinityGranade()
     {
         IntPtr mainModuleBaseAddress = proc.MainModule!.BaseAddress;
 
