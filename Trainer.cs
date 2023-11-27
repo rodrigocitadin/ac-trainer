@@ -41,7 +41,11 @@ public class Trainer
 
     public void InfinityArmor(Process proc)
     {
-        throw new NotImplementedException();
+        IntPtr mainModuleBaseAddress = proc.MainModule!.BaseAddress;
+
+        IntPtr player = memory.readPointer(proc.Handle, mainModuleBaseAddress + playerOffset);
+
+        memory.writeBytes(proc.Handle, player + armorOffset, BitConverter.GetBytes(100));
     }
 
     public void InfinityGranade(Process proc)
