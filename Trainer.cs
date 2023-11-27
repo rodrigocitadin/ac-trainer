@@ -15,19 +15,9 @@ public class Trainer
 
     public void InfinityRiffleAmmo(Process proc)
     {
-        try
-        {
-            proc = Process.GetProcessesByName("ac_client")[0];
-        }
-        catch (Exception _ex)
-        {
-            return;
-        }
-
         IntPtr mainModuleBaseAddress = proc.MainModule!.BaseAddress;
 
         IntPtr player = memory.readPointer(proc.Handle, mainModuleBaseAddress + playerOffset);
-        IntPtr ammo = memory.readPointer(proc.Handle, player + rifleAmmoOffset);
 
         memory.writeBytes(proc.Handle, player + rifleAmmoOffset, BitConverter.GetBytes(20));
     }
