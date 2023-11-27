@@ -21,4 +21,19 @@ public class Trainer
 
         memory.writeBytes(proc.Handle, player + rifleAmmoOffset, BitConverter.GetBytes(20));
     }
+
+    public void InfinityHealth(Process proc)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void InfinityArmor(Process proc)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void InfinityGranade(Process proc)
+    {
+        throw new NotImplementedException();
+    }
 }
