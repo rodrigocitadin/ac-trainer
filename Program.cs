@@ -3,7 +3,7 @@ using AcTrainer.Trainer;
 
 class Program
 {
-    static void main()
+    static public void Main()
     {
         Process proc;
 
@@ -22,6 +22,9 @@ class Program
         while (true)
         {
             trainer.InfinityRiffleAmmo();
+            trainer.InfinityHealth();
+            trainer.InfinityArmor();
+            trainer.InfinityGranade();
         }
     }
 }
